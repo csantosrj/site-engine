@@ -1,0 +1,26 @@
+<tr class="border-b">
+  <td class="p-2"><%= todo.title %></td>
+  <td class="p-2"><%= todo.dueDate %></td>
+  <td class="p-2">
+    <%- include("../atoms/badge", { done: todo.done }) %>
+  </td>
+  <td class="p-2 flex gap-2">
+    
+    <% if (!todo.done) { %>
+      <form method="POST" action="/todos/<%= todo.id %>/complete">
+        <%- include("../atoms/button", {
+          label: "Concluir",
+          type: "submit"
+        }) %>
+      </form>
+    <% } %>
+
+    <form method="POST" action="/todos/<%= todo.id %>/delete">
+      <%- include("../atoms/button", {
+        label: "Apagar",
+        type: "submit"
+      }) %>
+    </form>
+
+  </td>
+</tr>

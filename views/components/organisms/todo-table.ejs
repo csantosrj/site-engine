@@ -1,0 +1,24 @@
+<table class="w-full border mt-4">
+  <thead class="bg-gray-100">
+    <tr>
+      <th class="p-2 text-left">Título</th>
+      <th class="p-2 text-left">Entrega</th>
+      <th class="p-2 text-left">Estado</th>
+      <th class="p-2 text-left">Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if (todos.length === 0) { %>
+      <tr>
+        <td colspan="4" class="p-4 text-center text-gray-500">
+          Nenhuma tarefa criada
+        </td>
+      </tr>
+    <% } %>
+
+    <% todos.forEach(todo => { %>
+      <%- include("../molecules/todo-row", { todo }) %>
+    <% }) %>
+  </tbody>
+</table>

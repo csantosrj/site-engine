@@ -1,0 +1,39 @@
+<div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden">
+  <div class="bg-white w-full max-w-md mx-auto mt-20 p-6 rounded shadow">
+    
+    <h2 class="text-xl font-bold mb-4">Novo TODO</h2>
+
+    <form method="POST" action="/todos">
+      
+      <label class="block mb-2">Título</label>
+      <%- include("../atoms/input", {
+        name: "title",
+        required: true
+      }) %>
+
+      <label class="block mt-4 mb-2">Descrição</label>
+      <%- include("../atoms/input", {
+        name: "description"
+      }) %>
+
+      <label class="block mt-4 mb-2">Previsão</label>
+      <%- include("../atoms/input", {
+        name: "dueDate",
+        type: "date"
+      }) %>
+
+      <div class="mt-6 flex justify-end gap-2">
+        <button type="button" onclick="closeModal()" class="px-4 py-2">
+          Cancelar
+        </button>
+
+        <%- include("../atoms/button", {
+          label: "Criar",
+          type: "submit"
+        }) %>
+      </div>
+
+    </form>
+
+  </div>
+</div>
