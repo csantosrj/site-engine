@@ -39,27 +39,29 @@ This engine provides everything needed for:
 
 ---
 
-## 🏗️ Architecture Overview
+## 🏗️ Project Structure
+
+The project is organized to clearly separate rendering, application logic, and static assets.
 
 site-engine/
-├─ server/
-│  ├─ server.js
-│  ├─ routes/
-│  ├─ controllers/
-│  ├─ services/
-│  └─ models/
+├─ server/                 # Private application logic (not exposed to the browser)
+│  ├─ server.js            # Express bootstrap and SSR setup
+│  ├─ routes/              # HTTP routes (GET/POST)
+│  ├─ controllers/         # Request handlers (orchestration only)
+│  ├─ services/            # Business logic (in-memory mock, DB later)
+│  └─ models/              # Domain models
 │
-├─ views/
-│  ├─ layout/
-│  ├─ pages/
-│  └─ components/
-│     ├─ atoms/
-│     ├─ molecules/
-│     └─ organisms/
+├─ views/                  # Server-side rendered templates (EJS)
+│  ├─ layout/              # Base layouts
+│  ├─ pages/               # Page compositions
+│  └─ components/          # Atomic Design components
+│     ├─ atoms/            # Smallest UI elements
+│     ├─ molecules/        # Composed UI elements
+│     └─ organisms/        # Large UI sections
 │
-├─ public/
-│  ├─ css/
-│  └─ js/
+├─ public/                 # Static assets (served directly)
+│  ├─ css/                 # Stylesheets (Tailwind or custom)
+│  └─ js/                  # Minimal client-side scripts
 │
 ├─ package.json
 └─ README.md
