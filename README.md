@@ -42,7 +42,7 @@ This engine provides everything needed for:
 ## 🏗️ Project Structure
 
 The project is organized to clearly separate rendering, application logic, and static assets.
-
+```
 site-engine/
 ├─ server/                 # Private application logic (not exposed to the browser)
 │  ├─ server.js            # Express bootstrap and SSR setup
@@ -65,6 +65,7 @@ site-engine/
 │
 ├─ package.json
 └─ README.md
+```
 
 ### Key Points
 
